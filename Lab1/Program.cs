@@ -46,7 +46,6 @@ namespace Lab1
             }
 
 
-
             foreach (var item in vectors)
             {
                 rightAnswer(vectors, item);
