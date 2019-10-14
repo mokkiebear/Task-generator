@@ -12,10 +12,17 @@ namespace Lab1
         static string task = "Задача: Даны 5 векторов длины 4 над Z_2. Какой из этих векторов надо удалить, чтобы оставшиеся вектора образовывали векторное пространство?";
         static void Main(string[] args)
         {
-            for (int i = 0; i < 10; ++i)
+            int n = 0;
+            Console.WriteLine("Программа разработанна для генерирования типовых задач");
+            Console.WriteLine(task);
+            Console.WriteLine("Какое количество заданий сгенерировать?");
+            n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < n; ++i)
             {
                 algo();
             }
+            Console.WriteLine("Генерация заданий завершена!");
+            Console.ReadLine();
         }
 
         static void algo()
@@ -23,9 +30,6 @@ namespace Lab1
             Random rand = new Random();
             string[] vectors = new string[5];
             vectors[0] = "0000"; // Без этого, векторное подпространство никогда не сможет быть образовано
-            Console.WriteLine("Программа разработанна для генерирования типовых задач");
-            Console.WriteLine(task);
-
             vectors[1] = checkVector(vectors);
             vectors[2] = checkVector(vectors);
             vectors[3] = checkVector(vectors);
@@ -93,7 +97,6 @@ namespace Lab1
         {
             Random rand = new Random();
             string vector;
-            string[] nvectors = vectors;
             do
             {
                  vector = generateVector(rand);
